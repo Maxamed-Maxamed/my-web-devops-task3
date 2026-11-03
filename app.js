@@ -2,7 +2,7 @@
 // Import the Express.js framework.
 // Express helps us build a web server and handle HTTP requests.
 const express = require("express");
-
+const { getWelcomeMessage } = require("./src/message");
 // Create an Express application.
 // The app object will be used to define routes and start the server.
 const app = express();
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   // Then send HTML content back to the browser.
   res.status(200).send(`
     <h1>My Web DevOps Task 3</h1>
-    <p>The Node.js and Express application is running successfully.</p>
+    <p>${getWelcomeMessage()}</p>
   `);
 });
 
